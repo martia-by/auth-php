@@ -2,6 +2,14 @@
 
 namespace AuthPhp;
 
+/**
+ * CRUD тут
+ * create $this->create;
+ * read
+ * update
+ * delete
+ */
+
 class Database {
     private $filePath;
 

@@ -8,11 +8,11 @@ class User {
     private $email;
     private $name;
 
-    public function __construct($username, $email, $password, $name) {
-        $this->username = $username;
-        $this->email = $email;
-        $this->password = $this->hashPassword($password);
-        $this->name = $name;
+    public function __construct() {
+        //$this->username = $username;
+        //$this->email = $email;
+        //$this->password = $this->hashPassword($password);
+        //$this->name = $name;
     }
 
     private function hashPassword($password) {
