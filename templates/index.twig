@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест DbTest</title>
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+</head>
+<body>
+    <H2>Форма регистрации</H2>
+    <div id="reg-form">
+    <form action="register.php" method="post" id="register">
+        <div>
+            <label for="login">Логин:</label>
+            <input type="text" id="login" name="login" required>
+        </div>
+        <div>
+            <label for="email">Адрес электронной почты:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+            <label for="confirm_password">Подтверждение пароля:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+        </div>
+        <div>
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+    </div>
+    <H2>Управление, проверки</H2>
+    <form action="" method="post">
+        <button name="submit">Submit</button>
+        <button name="create">create</button>
+        <button name="update">update</button>
+        <button name="find">find</button>
+        <button name="call">call</button>
+        <button name="null">Покажи содержимое бд</button>
+    </form>
+    <h2>Что мы делаем, переменная $what_am_I_doing </h2>
+    Итак. $what_am_I_doing: {{ what_am_I_doing }}
+    <br>
+
+    {{ db_content_in_html|raw }}
+</body>
+</html>

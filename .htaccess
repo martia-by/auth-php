@@ -1,0 +1,8 @@
+RewriteEngine On
+Options -Indexes
+
+# Перенаправление всех запросов в публичную директорию
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/$1 [L]

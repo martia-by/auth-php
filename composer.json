@@ -1,0 +1,10 @@
+{
+  "autoload": {
+    "psr-4": {
+      "AuthPhp\\": "classes/"
+    }
+  },
+  "require": {
+    "twig/twig": "^3.9"
+  }
+}
