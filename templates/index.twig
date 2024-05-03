@@ -19,6 +19,7 @@
         <div class="form-group">
             <label for="email">Адрес электронной почты:</label>
             <input type="text" id="email" name="email" value="testvalue@manao.dev">
+            <p class="info__sub" id="email_info"></p>
         </div>
         <div class="form-group">
             <label for="password">Пароль:</label>
@@ -41,17 +42,9 @@
     </div>
     <H2>Управление, проверки</H2>
     <form action="" method="post">
-
-        <button name="create">create</button>
-        <button name="update">update</button>
-        <button name="find">find</button>
-        <button name="call">call</button>
+        <button name="reload">Обнови страницу</button>
         <button name="showmedb">Покажи содержимое бд</button>
     </form>
-    <h2>Что мы делаем, переменная $what_am_I_doing </h2>
-    Итак. $what_am_I_doing: {{ what_am_I_doing }}
-    <br>
-
     {{ db_content_in_html|raw }}
 </body>
 </html>

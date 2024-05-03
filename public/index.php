@@ -3,29 +3,16 @@ require __DIR__ . '/../config/config.php';
 require __DIR__ . '/../vendor/autoload.php';
 
 use AuthPhp\Database;
-use AuthPhp\DbTest;
 use AuthPhp\User;
-use AuthPhp\ErrorsHandler;
 
 // Создание экземпляра загрузчика Twig с указанием пути к шаблонам
 $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/../templates');
 // Создание экземпляра Twig
 $twig = new \Twig\Environment($loader);
 
-
 $what_am_I_doing = '';
 
-
-
-
-//$db->create($newUser);
-
-$db1 = new DbTest;
-//echo "<br><br><pre>";
-
- //var_dump($db1);
-
-//echo '</pre><br><br>';
+$db1 = new Database;
 
 $what_am_I_doing = "";
 $db_content_in_html = "";  
@@ -33,8 +20,6 @@ $db_content_in_html = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['submit'])) {
-        //$db->create("Новый элемент");
-        //$db->saveData();
         $send_data = [
             "login"=>$_POST['login'],
             "email"=>$_POST['email'], 
@@ -43,22 +28,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             "name"=>$_POST['name'],
         ];
         $db1->create($send_data);
-        echo "<pre>";
-        var_dump($send_data);
-        echo "</pre>";
-
-    } else if (isset($_POST['create'])) {
-
-        $db1->create($data2db1);
-    } else if (isset($_POST['update'])) {
-
-    } else if (isset($_POST['find'])) {
-
-    } else if (isset($_POST['call'])) {
 
     } else if (isset($_POST['showmedb'])) {
         $what_am_I_doing = "Показыаем БД";
-        $db_content_in_html = "<H2>Содержимое базы данных:</H2>" . $db1->getcontent();  
+        $dbarray = $db1->getcontent();
+        // Запускаем буферизацию вывода
+        ob_start();
+        // Выводим массив с помощью print_r
+        print_r($dbarray);
+        // Получаем содержимое текущего буфера и одновременно очищаем его
+        $content = ob_get_clean();
+
+        $db_content_in_html = "<h2>Содержимое базы данных:</h2> <pre>" . $content . "</pre>";;
+        //;
     } else echo "";
 }
 

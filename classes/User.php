@@ -8,36 +8,25 @@ class User {
     private $email;
     private $name;
 
-    public function __construct() {
-        //$this->username = $username;
-        //$this->email = $email;
-        //$this->password = $this->hashPassword($password);
-        //$this->name = $name;
-    }
+    //public function __construct() {
+    //}
 
+
+    /**
+     * Хэширование пароля пользователя. 
+     * Говорят, что password_hash() / password_verify() надёжнее и безопаснее, чем соль+md5 или соль+sha1
+     * +Меньшепеременных, меньше записей в БД
+     * 
+     * Но если надо, то
+     * $salt = random_bytes(16); //Но мы не сможем записать его в JSON БД. Вариант 
+     * $salt = base64_encode(random_bytes(16));
+     * $saltedPassword = $salt . md5($password);
+     * $hash = hash("sha256", $saltedPassword); или $hash = md5($salt . $password); 
+     * +Для хранения в базе данных добавляем каждому пользователю поле $salt
+     */
     private function hashPassword($password) {
         // Хэширование пароля с использованием безопасного алгоритма
         return password_hash($password, PASSWORD_DEFAULT);
     }
 
-    public function validate() {
-        // Валидация свойств пользователя перед сохранением
-        if (strlen($this->username) < 6) {
-            throw new Exception("Username must be at least 6 characters long.");
-        }
-        if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
-            throw new Exception("Invalid email format.");
-        }
-        if (strlen($this->password) < 6) {
-            throw new Exception("Password must be at least 6 characters long.");
-        }
-        // Проверка на уникальность username и email
-        // Здесь должен быть код для проверки в базе данных
-    }
-
-    public function save() {
-        // Сохранение пользователя в базу данных
-        // Здесь должен быть код для вставки данных в БД
-        echo "User saved successfully!";
-    }
 }

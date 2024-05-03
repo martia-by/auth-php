@@ -31,7 +31,7 @@
 </head>
 <body>
   Hi there!
-  <p id="load" style="cursor:pointer;">Абзац, епта</p>
+  <p id="load" style="cursor:pointer;">Абзац подгрузочный</p>
   <div id="info"></div>
 
 
