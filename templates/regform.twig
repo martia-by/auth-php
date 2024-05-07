@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест DbTest</title>
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/ajax_register.js"></script>
+<body>
+    
+    <div id="reg-form">
+    <H2>Форма регистрации</H2>
+    <form method="post" id="register">
+        <div class="form-group">
+            <label for="login">Логин:</label>
+            <input type="text" id="login" name="login" value="logintest" required>
+            <p class="info__sub" id="login_info">*Минимум 6 символов</p>
+        </div>
+        <div class="form-group">
+            <label for="email">Адрес электронной почты:</label>
+            <input type="text" id="email" name="email" value="testvalue@manao.dev">
+            <p class="info__sub" id="email_info"></p>
+        </div>
+        <div class="form-group">
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" value="2347@tyt.by" required>
+            <p class="info__sub" id="pass_info">*Минимум 6 символов. Обязательно цифры и буквы</p>
+        </div>
+        <div class="form-group">
+            <label for="confirm_password">Подтверждение пароля:</label>
+            <input type="password" id="confirm_password" name="confirm_password" value="2347@tyt.by1" required>
+        </div>
+        <div class="form-group">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" value="TestName">
+            <p class="info__sub" id="name_info">*Минимум 2 символа. Только буквы</p>
+        </div>
+        <button type="submit" name="submit">Зарегистрироваться</button>
+        <div id="result-message" style="display: none;"></div>
+    </form>
+    
+    </div>
+    <H2>Управление, проверки</H2>
+    <form action="" method="post">
+        <button name="reload">Обнови страницу</button>
+        <button name="showmedb">Покажи содержимое бд</button>
+    </form>
+    {{ db_content_in_html|raw }}
+</body>
+</html>

@@ -1,0 +1,21 @@
+[
+    {
+        "id": 1,
+        "login": "Tanya",
+        "password": "mylittlesister",
+        "name": "\u0422\u0430\u043d\u044f"
+    },
+    {
+        "id": 2,
+        "login": "Tanya",
+        "password": "mylittlesister",
+        "name": "\u0422\u0430\u043d\u044f"
+    },
+    {
+        "id": 3,
+        "login": "Tanya",
+        "password": "mylittlesister",
+        "name": "\u0422\u0430\u043d\u044f",
+        "hashpassword": "lalala"
+    }
+]

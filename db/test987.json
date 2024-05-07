@@ -1,0 +1,45 @@
+[
+    {
+        "id": 4,
+        "login": "Martia",
+        "password": "whynot?",
+        "name": "Alex"
+    },
+    {
+        "id": 7,
+        "login": "Tanya",
+        "password": "mylittlesister",
+        "name": "\u0422\u0430\u043d\u044f"
+    },
+    {
+        "id": 8,
+        "login": "Tanya",
+        "password": "mylittlesister",
+        "name": "\u0422\u0430\u043d\u044f",
+        "hashpassword": "lalala"
+    },
+    {
+        "id": 10,
+        "login": "Tanya",
+        "password": "mylittlesister",
+        "name": "\u0422\u0430\u043d\u044f"
+    },
+    {
+        "id": 20,
+        "login": "Tanya",
+        "password": "mylittlesister",
+        "name": "\u0422\u0430\u043d\u044f"
+    },
+    {
+        "id": 34,
+        "login": "Tanya",
+        "password": "mylittlesister",
+        "name": "\u0422\u0430\u043d\u044f"
+    },
+    {
+        "id": 50,
+        "login": "Tanya",
+        "password": "mylittlesister",
+        "name": "\u0422\u0430\u043d\u044f"
+    }
+]
