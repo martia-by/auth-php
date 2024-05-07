@@ -1,21 +1,15 @@
 [
     {
         "id": "1",
-        "login": "id3",
-        "password": "2test",
-        "name": "1test"
-    },
-    {
-        "id": 2,
         "login": "Martia",
-        "password": "2test",
-        "name": "1test"
+        "password": "whynot?",
+        "name": "Alex"
     },
     {
         "id": 3,
         "login": "Martia",
         "password": "whynot?",
-        "name": "1test"
+        "name": "Alex"
     },
     {
         "id": 4,

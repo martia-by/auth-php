@@ -8,26 +8,29 @@ use AuthPhp\User;
 use AuthPhp\CrudJson;
 
 
-echo "Hello world!";
+//echo "Hello world!";
 
-$dbjson = new CrudJson("1.json");
-//$dbjson->create();
+$dbjson = new CrudJson("test985.json");
+//$dbjson->createdb();
 //$dbjson->show();
 
 
 $data2array = [
-  'login' => 'id3',
-  'password' => '2test',
-  'name' => '1test'
+  'login' => 'Martia',
+  'password' => 'whynot?',
+  'name' => 'Alex'
 ];
 
 //var_dump($data2array);
 
-//$dbjson->c($data2array);
-//$dbjson->d(2);
+//$dbjson->create($data2array);
+//$dbjson->delete(2);
 //$dbjson->show();
-//$readdata = $dbjson->r();
-echo "<pre>" . print_r($dbjson->r(), true);
+$readdata = $dbjson->read();
+echo "<pre>" . print_r($readdata, true);
+//echo $dbjson->newId();
+
+//var_dump($readdata[0]);
 
 
 

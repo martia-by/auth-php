@@ -3,50 +3,73 @@
 namespace AuthPhp;
 
 /**
- * Класс будет работать с любым БД файлом JSON
- * Основные функции
- * c() создание записи
- * r() чтение
- * u() обновление
- * d() удаление
+ * Класс будет работать с любым БД файлом JSON, 
+ * который был создан этим классом.
+ * Есть своим особенности.
+ * 
+ * У каждого элемента массива JSON с момента создания есть свой id;
+ * id генерируется автоматически (последний +1)
+ * 
+ * основные функции работают 
+ * 
+ * Основные функции CRUD
+ * create() создание записи
+ * read() чтение
+ * update() обновление
+ * delete() удаление
  * 
  * Доп функции
- * create($path) создание файла json
- * delete($path) удалени файла json
+ * createdb($path) создание файла json
+ * deletedb($path) удаление файла json
  * 
  * loadData() Чтение json
  * saveData() запись (обновление) json
  * 
  * show() показать содержимое json
- * 
+ * newId() ищем последний ID, если нет такого, делаем id = 1;
  */
 
 class CrudJson 
 {
   private $filePath;
 
-  public  function __construct($path) 
+  public function __construct($path) 
   {
     $this->filePath = __DIR__ . "/../db/" . $path;
+    if (!file_exists($this->filePath)) 
+    {
+      echo "База не найдена<br>Создадим новую... $path";
+      $this->createdb();
+    }
   }
 
-  public function c($data) 
+  /**
+   * создание записи
+   */
+  public function create($data) 
   {
     $allData = $this->loadData();
-    $allData[] = $data; 
+    $newId = $this->newid();
+    $newIdArray = ['id'=>$newId];
+    $allData[] = array_merge($newIdArray, $data);
+    //$newData = ['id' => $newId, 'data' => $data];
+    //$allData[] = $newData; 
     $this->saveData($allData);
   }
 
-  public function r($criteria = null)
+  /**
+   * читаем базу, возвращаем запись, если указан ID массива (не ID параметр, ID указатель записи) 
+   */
+  public function read($conditions = null)
   {
     $allData = $this->loadData();
-    if (is_null($criteria)) {
+    if (is_null($conditions)) {
       return $allData;
     }
 
     // Возвращаем записи, соответствующие критериям
-    return array_filter($allData, function ($entry) use ($criteria) {
-      foreach ($criteria as $key => $value) {
+    return array_filter($allData, function ($entry) use ($conditions) {
+      foreach ($conditions as $key => $value) {
         if (!isset($entry[$key]) || $entry[$key] !== $value) {
           return false;
         }
@@ -55,12 +78,12 @@ class CrudJson
     });
   }
 
-  public function u($id, $newData) 
+  public function update($id, $newData) 
   {
     // Логика обновления данных
   }
 
-  public function d($id)
+  public function delete($id)
   {
     $allData = $this->loadData();
     foreach ($allData as $index => $entry) {
@@ -76,7 +99,7 @@ class CrudJson
   /**
    * 
    */
-  public function create()
+  public function createdb()
   {
     if (!file_exists($this->filePath)) 
     {
@@ -86,7 +109,7 @@ class CrudJson
     return false; 
   }
 
-  public function delete()
+  public function deletedb()
   {
     if (file_exists($this->filePath)) {
       unlink($this->filePath);
@@ -95,13 +118,33 @@ class CrudJson
     return false;
   }
 
+  /**
+   * читаем весь массив (БД)
+   */
   private function loadData() 
   {
     return json_decode(file_get_contents($this->filePath), true);
   }
 
+  /**
+   * Сохраняем массив (БД)
+   */
   private function saveData($data) {
     file_put_contents($this->filePath, json_encode($data, JSON_PRETTY_PRINT));
+  }
+
+  /**
+   * Получаем новый ID (последний ID +1)
+   */
+  private function newid()
+  {
+    $array_count = count($this->loadData());
+    if ($array_count>0) 
+    {
+      $last_db_element = $this->loadData()[$array_count-1];
+    } else return('1');
+    $lastId = $last_db_element['id']+1;
+    return $lastId;
   }
 
   /**
