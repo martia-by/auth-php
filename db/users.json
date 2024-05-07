@@ -4,5 +4,23 @@
         "email": "testvalue@manao.dev",
         "password": "$2y$10$bFPiSZeXg.qKtZAmreZ4zuUXgNLeS8XbOtcLTAMShWs3nXlGIzJi2",
         "name": "TestName"
+    },
+    {
+        "login": "logintest3543543",
+        "email": "testvalue@maafdasdadnao.dev",
+        "password": "$2y$10$U2NnmDMEMN7FD9lLuBWWWOSDIfA2JgAV0qPmNs08I9DrtwUwwKtdK",
+        "name": "TestName"
+    },
+    {
+        "login": "logintest2027",
+        "email": "testvalue@manao2.dev",
+        "password": "$2y$10$zZhOvwWADdNSNgpx0ZdgDeZgbJWYs\/M0vPK2htPC8AcaUoprX0eM6",
+        "name": "TestName"
+    },
+    {
+        "login": "logintest1285",
+        "email": "testvalue@mqqqqanao.dev",
+        "password": "$2y$10$Y.0Wo3H4ay\/3rSg5RDr8r.9GLrCSOSM1FEebkYjuucKOXCSjRVceC",
+        "name": "TestName"
     }
 ]
