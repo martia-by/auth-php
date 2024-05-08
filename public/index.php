@@ -3,7 +3,9 @@ $pages = [
     'main' => 'Главная',
     'regform' => 'Регистрационная форма',
     'autorization' => 'Страница авторизации',
-    'crudjson' => 'Тесторая для работы с базой'
+    'crudjson' => 'Тесторая для работы с базой',
+    'new_reg_form' => 'Новая форма регистрации'
+    
 ];
 
 // Предварительно загружаем данные урока, если указан
@@ -19,7 +21,7 @@ if (isset($_GET['page'])) {
         $pageContent = ob_get_clean();  // Получение и очистка буфера вывода
     } else {
         http_response_code(404);
-        $pageContent = "Еще не сделана страница. Получается 404 ошибка :)";
+        $pageContent = "<br><br>Еще не сделана страница. Получается 404 ошибка :)";
     }
 }
 ?>
@@ -30,6 +32,8 @@ if (isset($_GET['page'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $title; ?></title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/reg_script.js" defer></script>
 </head>
 <body>
   <header>
@@ -42,11 +46,9 @@ foreach ($pages as $key => $pageDescription) {
 ?>
     </nav>
   </header>
-  <section>
+  <section id="pageContent">
   <?php echo $pageContent; // Вывод содержимого урока ?>
   </section>
-
-
 
   
 </body>

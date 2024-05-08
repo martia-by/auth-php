@@ -31,6 +31,7 @@ class ComposerStaticInit20e4ec247560dbf8f506958adec1c9af
         'A' => 
         array (
             'AuthPhp\\' => 8,
+            'App\\' => 4,
         ),
     );
 
@@ -54,6 +55,10 @@ class ComposerStaticInit20e4ec247560dbf8f506958adec1c9af
         'AuthPhp\\' => 
         array (
             0 => __DIR__ . '/../..' . '/classes',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 

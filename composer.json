@@ -1,7 +1,8 @@
 {
   "autoload": {
     "psr-4": {
-      "AuthPhp\\": "classes/"
+      "AuthPhp\\": "classes/",
+      "App\\": "src/"
     }
   },
   "require": {

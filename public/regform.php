@@ -2,7 +2,7 @@
 require __DIR__ . '/../config/config.php';
 require __DIR__ . '/../vendor/autoload.php';
 
-use AuthPhp\Database;
+use AuthPhp\DatabaseCrudJson;
 use AuthPhp\User;
 
 // Создание экземпляра загрузчика Twig с указанием пути к шаблонам
@@ -12,7 +12,7 @@ $twig = new \Twig\Environment($loader);
 
 $what_am_I_doing = '';
 
-$db1 = new Database;
+$db1 = new DatabaseCrudJson(users.json);
 
 $what_am_I_doing = "";
 $db_content_in_html = "";  

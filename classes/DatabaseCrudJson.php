@@ -54,6 +54,7 @@ class DatabaseCrudJson
         $newIdArray = ['id'=>$newId];
         $allData[] = array_merge($newIdArray, $data);
         $this->saveData($allData);
+        return true;
     }
 
     /**
@@ -150,7 +151,7 @@ class DatabaseCrudJson
      * Сохраняем массив (БД)
      */
     private function saveData($data) {
-        file_put_contents($this->filePath, json_encode($data, JSON_PRETTY_PRINT));
+        file_put_contents($this->filePath, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
     }
 
     /**
