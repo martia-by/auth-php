@@ -1,6 +1,10 @@
 body {
   background-color: #FBFBFB;
 }
+section {
+  display: block;
+  padding-top: 40px;
+}
 
 #reg-form .form-group {
   margin-bottom: 10px;

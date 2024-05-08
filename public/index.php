@@ -11,16 +11,16 @@ $title = "Точка входа";  // Значение по умолчанию �
 $pageContent = '';  // Переменная для хранения содержимого урока
 
 if (isset($_GET['page'])) {
-  $pageFile = $_GET['page'] . '.php';
-  if (file_exists($pageFile)) {
-    ob_start();  // Включение буферизации вывода
-    include($pageFile);
-    $title = $pages[$_GET['page']];
-    $pageContent = ob_get_clean();  // Получение и очистка буфера вывода
-  } else {
-    http_response_code(404);
-    $pageContent = "Еще не сделана страница. Получается 404 ошибка :)";
-  }
+    $pageFile = $_GET['page'] . '.php';
+    if (file_exists($pageFile)) {
+        ob_start();  // Включение буферизации вывода
+        include($pageFile);
+        $title = $pages[$_GET['page']];
+        $pageContent = ob_get_clean();  // Получение и очистка буфера вывода
+    } else {
+        http_response_code(404);
+        $pageContent = "Еще не сделана страница. Получается 404 ошибка :)";
+    }
 }
 ?>
 
@@ -34,17 +34,20 @@ if (isset($_GET['page'])) {
 <body>
   <header>
     <nav>
-      <?php
-      // Автоматическое создание ссылок на страницы
-  foreach ($pages as $key => $pageDescription) {
-      echo "<a href=\"index.php?page=$key\">$pageDescription</a><br>\n";
-  }
-
-  // Вывод содержимого урока
-  echo "<br><br><br>" . $pageContent;
-  ?>
+<?php
+// Автоматическое создание ссылок на страницы
+foreach ($pages as $key => $pageDescription) {
+    echo "<a href=\"index.php?page=$key\">$pageDescription</a><br>" . PHP_EOL;
+}
+?>
     </nav>
   </header>
+  <section>
+  <?php echo $pageContent; // Вывод содержимого урока ?>
+  </section>
+
+
+
   
 </body>
 </html>

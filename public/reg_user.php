@@ -22,10 +22,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   // Проверка полей
   if ($error = Validator::validateLogin($login)) {
-      $errors['loginError'] = $error;
+    $errors['loginError'] = $error;
   }
   if ($error = Validator::validatePassword($password)) {
-      $errors['passwordError'] = $error;
+    $errors['passwordError'] = $error;
   }
   if ($error = Validator::validateEmail($email)) {
       $errors['emailError'] = $error;
