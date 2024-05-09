@@ -1,9 +1,9 @@
 <?php
 
 ?>
-<script src="js/reg_script.js" defer></script>
+<script src="js/registration.js" defer></script>
 <div id="cont_reg_form">
-  <h2>Регистрация пользователя</h2>
+    <h2>Регистрация пользователя</h2>
     <form id="regForm" action="" method="POST">
         <div class="form-field">
             <label for="login">* Логин:</label>
