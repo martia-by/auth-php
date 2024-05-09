@@ -39,10 +39,10 @@ if ($_POST['password'] !== $_POST['password_confirm']) {
 if (isset($_POST['submit']) && !array_filter($errors)) {
     $database = new DatabaseCrudJson("users.json");
     $createSuccess = $database->create([
-        'login' => $_POST['login'],
-        'email' => $_POST['email'],
+        'login' => trim($_POST['login']),
+        'email' => trim($_POST['email']),
         'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
-        'name' => $_POST['name']
+        'name' => preg_replace('/\s+/', ' ', trim($_POST['name'])) //обрезаем пробелы по бокам + заменяем повторяющиеся пробелы (preg_replace('/\s+/', ' ', $string)
     ]);
 
     // Проверяем успешность создания записи

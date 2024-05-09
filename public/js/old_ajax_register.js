@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();  // Предотвращаем стандартную отправку формы
     const formData = new FormData(form); // Собираем данные формы
 
-    fetch('api/old_reg_user.php', { // Путь к серверному скрипту, который будет обрабатывать данные
+    fetch('app/old_reg_user.php', { // Путь к серверному скрипту, который будет обрабатывать данные
       method: 'POST',
       body: formData
     })

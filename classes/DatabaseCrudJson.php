@@ -36,11 +36,11 @@ class DatabaseCrudJson
      */
     public function __construct($path) 
     {
-      $this->filePath = __DIR__ . "/../db/" . $path;
-      if (!file_exists($this->filePath)) {
-          echo "База не найдена<br>Создадим новую... $path";
-          $this->createdb();
-      }
+        $this->filePath = __DIR__ . "/../db/" . $path;
+        if (!file_exists($this->filePath)) {
+            echo "База не найдена<br>Создадим новую... $path";
+            $this->createdb();
+        }
     }
 
     /**
@@ -88,13 +88,13 @@ class DatabaseCrudJson
         $found = false; 
         foreach ($allData as $index => $entry)
         {
-          if(($entry['id'] === $id)) {
-              $newArray = array_merge(['id'=>$id], $Data);
-              $allData[$index] = $newArray;
-              $this->saveData($allData);
-              $found = true;
-              break;
-          }
+            if(($entry['id'] === $id)) {
+                $newArray = array_merge(['id'=>$id], $Data);
+                $allData[$index] = $newArray;
+                $this->saveData($allData);
+                $found = true;
+                break;
+            }
         } 
         return $found;
     }

@@ -43,9 +43,15 @@ class OldValidator {
      * Валидация имени. 2 буквы, без пробелов.
      */
     public static function validateName($name) {
-        if (strlen($name) < 2 || !preg_match('/^[a-zA-Zа-яА-ЯёЁ]+$/', $name)) {
+        //2 сбуквы минимум
+        if (mb_strlen($name) < 2) {
             return "Имя должно состоять минимум из 2 букв.";
         }
+
+        if (!preg_match('/^[a-zA-Zа-яА-ЯёЁ]+$/', $name)) {
+            return "Только буквы (латиница или кириллица)";
+        }
+
         if (strpos($name, ' ') !== false) {
             return "Имя не должно содержать пробелов.";
         }

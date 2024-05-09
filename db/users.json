@@ -33,5 +33,54 @@
         "email": "testvaqq1wlue@manao.dev",
         "password": "$2y$10$v2uCTkuBJVkZotZb8c9gne0H5cN42441i5Ew4MpzrJKBWXIk9ubre",
         "name": "TestName"
+    },
+    {
+        "id": 59,
+        "login": "ьфкешф",
+        "email": "qwe@ewq.ru",
+        "password": "$2y$10$O4U1.mlyfNrUswalE8GJnesfRakAmnWcX0moCa80i3Jx1bqSGqvzG",
+        "name": "      Александр Петрович"
+    },
+    {
+        "id": 60,
+        "login": "testov",
+        "email": "qwe@321.w",
+        "password": "$2y$10$.civx.bYfYrQgF6cMy2n3.EBJAawpldA8BN7PEDFQmrAtquszvSpa",
+        "name": "d     ads dasds"
+    },
+    {
+        "id": 61,
+        "login": "asdasdadas",
+        "email": "qwe@234qq.q",
+        "password": "$2y$10$RljW5MSQMDWCyBueEqUkUe1vJ60XuTqkNc83vwUVNhw5QKntV9.US",
+        "name": "TestName"
+    },
+    {
+        "id": 62,
+        "login": "logintest44444",
+        "email": "testvalue@manaqqqqqqqo.dev",
+        "password": "$2y$10$u6gZdYojIjWzrphip0UzEe2Mijo609uZ63n5EeeFClyvwAb590Vh6",
+        "name": "TestName"
+    },
+    {
+        "id": 63,
+        "login": "logintest6666",
+        "email": "testvalue@manao.deav",
+        "password": "$2y$10$9kCXOP9h1xEyZB\/bg8U5vuAjloGBmMyq9UmT98zo4Y9yIfkBsz15S",
+        "name": "TestNameИван"
+    },
+    {
+        "id": 64,
+        "login": "екуцйцкке",
+        "email": "trewq@111.q",
+        "password": "$2y$10$uBcetgaDMqsgAaVYnW\/kCuTX5kfZAcJFLrbb430BqqK2RLa3\/YYLe",
+        "name": "Саня Петров"
+    },
+    {
+        "id": 65,
+        "login": "sdfsdfjbsfkjb",
+        "email": "trewq@qq.q",
+        "password": "$2y$10$3vYrhpF36v3GKtCVet27fuq0lPNTufF2ovCu7cdXKNmHVw9eK5\/8y",
+        "name": "САня Петров"
     }
 ]
