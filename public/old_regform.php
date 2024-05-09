@@ -3,7 +3,6 @@ require __DIR__ . '/../config/config.php';
 require __DIR__ . '/../vendor/autoload.php';
 
 use AuthPhp\DatabaseCrudJson;
-use AuthPhp\User;
 
 // Создание экземпляра загрузчика Twig с указанием пути к шаблонам
 $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/../templates');
@@ -12,26 +11,16 @@ $twig = new \Twig\Environment($loader);
 
 $what_am_I_doing = '';
 
-$db1 = new DatabaseCrudJson(users.json);
+$db1 = new DatabaseCrudJson("users.json");
 
 $what_am_I_doing = "";
 $db_content_in_html = "";  
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_POST['submit'])) {
-        $send_data = [
-            "login"=>$_POST['login'],
-            "email"=>$_POST['email'], 
-            "password"=>$_POST['password'], 
-            "confirm_password"=>$_POST['confirm_password'],
-            "name"=>$_POST['name'],
-        ];
-        $db1->create($send_data);
-
-    } else if (isset($_POST['showmedb'])) {
+    if (isset($_POST['showmedb'])) {
         $what_am_I_doing = "Показыаем БД";
-        $dbarray = $db1->getcontent();
+        $dbarray = $db1->read();
         // Запускаем буферизацию вывода
         ob_start();
         // Выводим массив с помощью print_r
@@ -50,6 +39,6 @@ $variables = [
 ];
 
 // Рендеринг шаблона
-echo $twig->render('index.twig', $variables); // Передача переменных в шаблон
+echo $twig->render('old_regform.twig', $variables); // Передача переменных в шаблон
 
 

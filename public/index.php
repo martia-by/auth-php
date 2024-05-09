@@ -2,11 +2,10 @@
 $pages = [
     'main' => 'Главная',
     'git' => 'Git',
-    'regform' => 'Регистрационная форма',
+    'old_regform' => '1ая версия формы регистрации',
+    'new_reg_form' => 'Новая форма регистрации (с проверкой на лету)',
     'autorization' => 'Страница авторизации',
-    'crudjson' => 'Тесторая для работы с базой',
-    'new_reg_form' => 'Новая форма регистрации'
-    
+    'crudjson' => 'Тесторая страница для работы с базой',
 ];
 
 // Предварительно загружаем данные урока, если указан
@@ -34,7 +33,6 @@ if (isset($_GET['page'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $title; ?></title>
   <link rel="stylesheet" href="css/styles.css">
-  <script src="js/reg_script.js" defer></script>
 </head>
 <body>
   <header>

@@ -5,7 +5,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use AuthPhp\DatabaseCrudJson;
 
-$dbjson = new DatabaseCrudJson("lasttest.json"); 
+$dbjson = new DatabaseCrudJson("users.json"); 
 //$dbjson->createdb();
 //$dbjson->show();
 
@@ -29,6 +29,7 @@ $data1array = [
 //$dbjson->delete(1); //delete
 
 //$dbjson->deletedb();
+
 $dbjson->show(); //show
 
 

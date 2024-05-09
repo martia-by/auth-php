@@ -1,64 +1,5 @@
 [
     {
-        "login": "logintest1",
-        "email": "testvalue@manao.dev",
-        "password": "$2y$10$bFPiSZeXg.qKtZAmreZ4zuUXgNLeS8XbOtcLTAMShWs3nXlGIzJi2",
-        "name": "TestName"
-    },
-    {
-        "login": "logintest3543543",
-        "email": "testvalue@maafdasdadnao.dev",
-        "password": "$2y$10$U2NnmDMEMN7FD9lLuBWWWOSDIfA2JgAV0qPmNs08I9DrtwUwwKtdK",
-        "name": "TestName"
-    },
-    {
-        "login": "logintest2027",
-        "email": "testvalue@manao2.dev",
-        "password": "$2y$10$zZhOvwWADdNSNgpx0ZdgDeZgbJWYs\/M0vPK2htPC8AcaUoprX0eM6",
-        "name": "TestName"
-    },
-    {
-        "login": "logintest1285",
-        "email": "testvalue@mqqqqanao.dev",
-        "password": "$2y$10$Y.0Wo3H4ay\/3rSg5RDr8r.9GLrCSOSM1FEebkYjuucKOXCSjRVceC",
-        "name": "TestName"
-    },
-    {
-        "id": 1,
-        "login": "martia1@tut.by",
-        "email": "martia1@tut.by",
-        "password": "$2y$10$7PCeBpJTIyoVavkfKTgMWeRqsaj.9GWtP41zz874BMgGD6TeleVqy",
-        "name": "martia1@tut.by"
-    },
-    {
-        "id": 2,
-        "login": "martia1@tut.by1",
-        "email": "martia1@tut.by1",
-        "password": "$2y$10$GJ6rAGt.uPXhge2IMUORIORVMUJ7gM79vLMI6DUy3S\/1xpwUuzMf6",
-        "name": "martia1@tut.by1"
-    },
-    {
-        "id": 3,
-        "login": "martia23@tut.by1",
-        "email": "martia23@tut.by1",
-        "password": "$2y$10$PdfzpGltdI7CugFFSmuLHu8S3PejDzL5cBZYB6ZzJfUZPp7OzXnj.",
-        "name": "martia23@tut.by1"
-    },
-    {
-        "id": 4,
-        "login": "martia65@tut.by1",
-        "email": "martia65@tut.by1",
-        "password": "$2y$10$unwf09asxz9DIQHd7T3NKeCIk6eIfTolyTknaxQCKgMLJ6pvOrBQO",
-        "name": "martia65@tut.by1"
-    },
-    {
-        "id": 5,
-        "login": "martia72@tut.by1",
-        "email": "martia72@tut.by1",
-        "password": "$2y$10$NtkRyGS0JRyn56f4yvb\/k.iTLybMzmkSjj6ZPsRIn0VKy1P87sJvO",
-        "name": "martia72@tut.by1"
-    },
-    {
         "id": 6,
         "login": "asdabsd@12.we",
         "email": "asdabsd@12.we",
@@ -73,32 +14,24 @@
         "name": "cont_reg_form22@org.me"
     },
     {
-        "id": 8,
-        "login": "doublledragon@mail.r1",
-        "email": "doublledragon@mail.r1",
-        "password": "$2y$10$uNQCvumaeqA\/goinMVJFOuIv5sj9Ld2.CNiK18hSQMA5sE7s5qV0e",
-        "name": "Новый пользователь"
+        "id": 56,
+        "login": "martia",
+        "email": "martiae3@mail.ru",
+        "password": "$2y$10$kLyrizGE1nigAvyHNwJ67emQP9Rlt2VMcPw2gdpsX5Y076F9FJNEe",
+        "name": "Красавчик"
     },
     {
-        "id": 9,
-        "login": "intro@re.w1q",
-        "email": "intro@re.w1q",
-        "password": "$2y$10$eTgbyyCjXGRZ1lbXd0dRY.4ZZOrsmH.6OZlwYPZqdb7S9hnrOpHnO",
-        "name": "intro@re.w1q",
-        "0": "НаБис"
+        "id": 57,
+        "login": "logintest",
+        "email": "testvalue@manao.dev",
+        "password": "$2y$10$YQc5Qj\/c\/TONEO5vnUjeWeXUb\/8i4kg1bVV9xtFAT4oWThfOZJP7C",
+        "name": "TestName"
     },
     {
-        "id": 10,
-        "login": "Кирилл",
-        "email": "indo@qwq.w",
-        "password": "$2y$10$F9RHK6PPFzoRpFlDcirgh.3byhbTVtL5sUmiW4LF4XO0A7PDvU1.6",
-        "name": "яя вам покажу мать"
-    },
-    {
-        "id": 11,
-        "login": "дфыееув",
-        "email": "lasttest@ere.e1",
-        "password": "$2y$10$chBkfDE2YhoIl3bb2JMDvu\/DXj9yarxWNqcIIwWdxSEtBJSHVpDeq",
-        "name": "Новое имя пользователя"
+        "id": 58,
+        "login": "logintest1",
+        "email": "testvaqq1wlue@manao.dev",
+        "password": "$2y$10$v2uCTkuBJVkZotZb8c9gne0H5cN42441i5Ew4MpzrJKBWXIk9ubre",
+        "name": "TestName"
     }
 ]
