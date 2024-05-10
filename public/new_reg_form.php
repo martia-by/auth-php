@@ -1,5 +1,6 @@
 <?php
 
+if (isset($_COOKIE['currentuser'])) {echo "Привет " . $_COOKIE['currentusername'];}; 
 ?>
 <script src="js/registration.js" defer></script>
 <div id="cont_reg_form">

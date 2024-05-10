@@ -23,14 +23,15 @@ $data1array = [
 ];
 
 //setcookie("data1array", $data1array['login'], time()+5000);
-unset($_COOKIE['data1array']);
+//unset($_COOKIE['data1array']);
 
 
 
 var_dump(time());
 
-echo "<br><br><br><br>";
-var_dump($_COOKIE);
+echo "<br><br><br><br> <pre>";
+print_r($_COOKIE);
+echo "</pre>";
 
 
 //$dbjson->create($data1array); //create

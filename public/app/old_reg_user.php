@@ -74,6 +74,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($createSuccess) {
             $response = ['success' => true, 'message' => 'Регистрация прошла успешно!'];
+            setcookie("currentuser", $login, time() + 2592000,"/");
+            setcookie("currentusername", $name, time() + 2592000, "/");
         } else {
             $response = ['success' => false, 'errors' => ['Не удалось зарегистрировать пользователя.']];
         }

@@ -43,16 +43,20 @@ if ($_POST['password'] !== $_POST['password_confirm']) {
 // Создаем запись
 if (isset($_POST['submit']) && !array_filter($errors)) {
     $database = new DatabaseCrudJson("users.json");
+    $createdLogin = trim($_POST['login']);
+    $createdName = preg_replace('/\s+/', ' ', trim($_POST['name'])); //обрезаем пробелы по бокам + заменяем повторяющиеся пробелы (preg_replace('/\s+/', ' ', $string)
     $createSuccess = $database->create([
-        'login' => trim($_POST['login']),
+        'login' => $createdLogin,
         'email' => trim($_POST['email']),
         'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
-        'name' => preg_replace('/\s+/', ' ', trim($_POST['name'])) //обрезаем пробелы по бокам + заменяем повторяющиеся пробелы (preg_replace('/\s+/', ' ', $string)
+        'name' => $createdName
     ]);
 
-    // Проверяем успешность создания записи
+    // Проверяем успешность создания записи, включаем куки
     if ($createSuccess) {
         $errors['created'] = true;
+        setcookie("currentuser", $createdLogin, time() + 2592000,"/");
+        setcookie("currentusername", $createdName, time() + 2592000, "/");
     } else {
         $errors['created'] = false;
     }
