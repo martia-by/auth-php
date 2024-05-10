@@ -6,6 +6,15 @@ section {
   padding-top: 40px;
 }
 
+a {
+  color: #000000d0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .form-field {
   margin-bottom: 10px;
 }

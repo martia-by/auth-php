@@ -2,16 +2,11 @@
 
 namespace AuthPhp;
 
-require __DIR__ . '/../vendor/autoload.php';
-
 use AuthPhp\DatabaseCrudJson;
 
 class ValidatorEmail
 {
-    private $errors = [
-        'email' => 'error',
-    ];
-
+    private $error;
     private $usersArray;
 
     public function __construct()
@@ -28,14 +23,14 @@ class ValidatorEmail
     public function validate($email)
     {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $this->errors['email'] = "Введите корректный адрес электронной почты.";
-            return $this->errors['email'];
+            $this->error = "Введите корректный адрес электронной почты.";
+            return $this->error;
         } elseif (!$this->isEmailUnique($email)) {
-            $this->errors['email'] = "Электронная почта уже используется.";
-            return $this->errors['email'];
+            $this->error = "Электронная почта уже используется.";
+            return $this->error;
         }
 
-        unset($this->errors['email']);
+        unset($this->error);
         return null;
     }
 
@@ -47,10 +42,5 @@ class ValidatorEmail
             }
         }
         return true;
-    }
-
-    public function getErrors()
-    {
-        return $this->errors;
     }
 }

@@ -8,6 +8,11 @@ use AuthPhp\DatabaseCrudJson;
 use AuthPhp\OldUser;
 use AuthPhp\OldValidator;
 
+// Проверяем, установлен ли заголовок X-Requested-With и равен ли он 'XMLHttpRequest'
+if (!isset($_SERVER['HTTP_X_REQUESTED_WITH']) || strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) !== 'xmlhttprequest') {
+    // Если это не AJAX-запрос, прекращаем выполнение скрипта
+    die('Access denied: only AJAX requests are allowed');
+}
 // Проверка метода запроса и наличия POST данных
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     http_response_code(405);

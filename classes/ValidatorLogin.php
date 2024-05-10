@@ -2,19 +2,11 @@
 
 namespace AuthPhp;
 
-require __DIR__ . '/../vendor/autoload.php';
-
 use AuthPhp\DatabaseCrudJson;
 
 class ValidatorLogin
 {
-    private $errors = [
-        'login' => 'error',
-        'password' => 'error',
-        'email' => 'error',
-        'name' => 'error'
-    ];
-
+    private $error;
     private $usersArray;
 
     public function __construct()
@@ -28,27 +20,27 @@ class ValidatorLogin
         $this->usersArray = $db->read();
     }
 
-    public function validateLogin($login)
+    public function validate($login)
     {
         // Проверка длины логина
         if (mb_strlen($login) < 6) {
-            $this->errors['login'] = "Логин должен быть не менее 6 символов.";
-            return $this->errors['login'];
+            $this->error = "Логин должен быть не менее 6 символов.";
+            return $this->error;
         } 
         
         // Проверка наличия пробелов в логине
         if (strpos($login, ' ') !== false) {
-            $this->errors['login'] = "Логин не должен содержать пробелы.";
-            return $this->errors['login'];
+            $this->error = "Логин не должен содержать пробелы.";
+            return $this->error;
         }
         
         // Проверка уникальности логина
         if (!$this->isLoginUnique($login)) {
-            $this->errors['login'] = "Логин занят.";
-            return $this->errors['login'];
+            $this->error = "Логин занят.";
+            return $this->error;
         }
 
-        unset($this->errors['login']);
+        unset($this->error);
         return null;
     }
 
@@ -60,10 +52,5 @@ class ValidatorLogin
             }
         }
         return true;
-    }
-
-    public function getErrors()
-    {
-        return $this->errors;
     }
 }

@@ -3,7 +3,8 @@ document.getElementById('regForm').addEventListener('input', function () {
 
   const formData = new FormData(this);
   const xhr = new XMLHttpRequest();
-  xhr.open('POST', 'app/reg.php', true);
+  xhr.open('POST', 'app/registration.php', true);
+  xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
   xhr.onload = function () {
     if (xhr.status === 200) {
       const response = JSON.parse(xhr.responseText);
@@ -38,7 +39,8 @@ document.getElementById('regForm').addEventListener('submit', function (event) {
   const formData = new FormData(this);
   formData.append('submit', 'send');
   const xhr = new XMLHttpRequest();
-  xhr.open('POST', 'app/reg.php', true);
+  xhr.open('POST', 'app/registration.php', true);
+  xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
   xhr.onload = function () {
     if (xhr.status === 200) {
       const response = JSON.parse(xhr.responseText);

@@ -6,7 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     fetch('app/old_reg_user.php', { // Путь к серверному скрипту, который будет обрабатывать данные
       method: 'POST',
-      body: formData
+      body: formData,
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest'
+      }
     })
     
       .then(response => response.json()) 
