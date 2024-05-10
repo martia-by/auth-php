@@ -47,5 +47,12 @@
         "email": "testvalue@manao.dev",
         "password": "$2y$10$FlqxuQPyFmeWpN67fquGK.Lk4VFJsn9NrZPNzUcxFZXSjNyWuE\/dK",
         "name": "TestName"
+    },
+    {
+        "id": 68,
+        "login": "logintest1",
+        "email": "testvalsddue@manao.dev",
+        "password": "$2y$10$ArtO7Tulz7CN\/7SuvMten.Dhn3TyZM66xkjRR35hm7ALnWo7LHnVm",
+        "name": "TestName"
     }
 ]
