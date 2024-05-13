@@ -1,6 +1,4 @@
 <?php
-require __DIR__ . '/../config/config.php';
-require __DIR__ . '/../vendor/autoload.php';
 
 use AuthPhp\DatabaseCrudJson;
 
@@ -30,6 +28,8 @@ $variables = [
 ];
 
 // Рендеринг шаблона
-echo $twig->render('old_regform.twig', $variables); // Передача переменных в шаблон
+if (!isset($_SESSION['logged_in'])) {
+    echo $twig->render('old_regform.twig', $variables); // Передача переменных в шаблон
+}
 
 

@@ -1,15 +1,21 @@
 <?php
+require __DIR__ . '/../config/config.php';
+require __DIR__ . '/../vendor/autoload.php';
+
+session_start();
+
 $pages = [
     'main' => 'Главная',
     'git' => 'Git',
-    'old_regform' => 'Регистрации (версия 1)',
-    'new_reg_form' => 'Регистрации (версия 2)',
-    'autorization' => 'Страница авторизации',
-    'crudjson' => 'Тесторая страница для работы с базой',
+    'crudjson' => 'Тесторая страница для работы с базой'
 ];
 
+if (basename($_SERVER['PHP_SELF']) == 'logout.php') {
+    setcookie('currentuser', '', time() - 3600, '/');  // Удаление куки 
+}
+
 // Предварительно загружаем данные урока, если указан
-$title = "Точка входа";  // Значение по умолчанию для заголовка
+$title = "Регистраци / авторизация";  // Значение по умолчанию для заголовка
 $pageContent = '';  // Переменная для хранения содержимого урока
 
 if (isset($_GET['page'])) {
@@ -17,7 +23,10 @@ if (isset($_GET['page'])) {
     if (file_exists($pageFile)) {
         ob_start();  // Включение буферизации вывода
         include($pageFile);
-        $title = $pages[$_GET['page']];
+        if (isset($pages[$_GET['page']])) {
+            $title = $pages[$_GET['page']];
+        }
+        
         $pageContent = ob_get_clean();  // Получение и очистка буфера вывода
     } else {
         http_response_code(404);
@@ -33,12 +42,28 @@ if (isset($_GET['page'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $title; ?></title>
   <link rel="stylesheet" href="css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
 </head>
 <body>
   <header>
     <nav>
 <?php
 // Автоматическое создание ссылок на страницы
+/**
+ * Сперва строчка приветствия / авторизации / регистрации / Выхода
+ * 
+ */
+
+if (isset($_SESSION['logged_in']) && (isset($_GET['page']) && $_GET['page'] != 'logout')) {
+    echo "Привет, " . $_SESSION['currentusername'] . "! ";
+    echo "<a href=\"index.php?page=logout\"><button>Выход</button></a><br><hr><br>" . PHP_EOL;
+} else {
+    echo "<a href=\"index.php?page=login\">Войти</a> | <a href=\"index.php?page=old_regform\">Регистрация 1</a> | <a href=\"index.php?page=new_reg_form\">Регистрация 2 (нов)</a><br><hr><br>" . PHP_EOL;
+}
+
+
+
 foreach ($pages as $key => $pageDescription) {
     echo "<a href=\"index.php?page=$key\">$pageDescription</a><br>" . PHP_EOL;
 }
@@ -46,7 +71,7 @@ foreach ($pages as $key => $pageDescription) {
     </nav>
   </header>
   <section id="pageContent">
-  <?php echo $pageContent; // Вывод содержимого урока ?>
+  <?php echo $pageContent; // Вывод содержимого ?>
   </section>
 
   

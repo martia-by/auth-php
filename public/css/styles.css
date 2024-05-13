@@ -15,7 +15,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.form-field {
+.form-field, .form-group {
   margin-bottom: 10px;
 }
 

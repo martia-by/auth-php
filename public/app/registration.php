@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require __DIR__ . '/../../vendor/autoload.php';
 
 use AuthPhp\ValidatorLogin;
@@ -55,8 +57,10 @@ if (isset($_POST['submit']) && !array_filter($errors)) {
     // Проверяем успешность создания записи, включаем куки
     if ($createSuccess) {
         $errors['created'] = true;
-        setcookie("currentuser", $createdLogin, time() + 2592000,"/");
-        setcookie("currentusername", $createdName, time() + 2592000, "/");
+        $_SESSION['currentuser'] = $createdLogin;
+        $_SESSION['currentusername'] = $createdName;
+        $_SESSION['logged_in'] = true;
+
     } else {
         $errors['created'] = false;
     }

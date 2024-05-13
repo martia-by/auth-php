@@ -14,17 +14,17 @@
         <div class="form-group">
             <label for="login">Логин:</label>
             <input type="text" id="login" name="login" value="logintest" required>
-            <p class="info__sub" id="login_info">*Минимум 6 символов</p>
+            <div class="info__sub info" id="login_info">*Минимум 6 символов</div>
         </div>
         <div class="form-group">
             <label for="email">Адрес электронной почты:</label>
             <input type="text" id="email" name="email" value="testvalue@manao.dev" required>
-            <p class="info__sub" id="email_info"></p>
+            <div class="info" id="email_info"></div>
         </div>
         <div class="form-group">
             <label for="password">Пароль:</label>
             <input type="password" id="password" name="password" value="2347@tyt.by" required>
-            <p class="info__sub" id="pass_info">*Минимум 6 символов. Обязательно цифры и буквы</p>
+            <div class="info" id="pass_info">*Минимум 6 символов. Обязательно цифры и буквы</div>
         </div>
         <div class="form-group">
             <label for="confirm_password">Подтверждение пароля:</label>
@@ -33,7 +33,7 @@
         <div class="form-group">
             <label for="name">Имя:</label>
             <input type="text" id="name" name="name" value="TestName" required>
-            <p class="info__sub" id="name_info">*Минимум 2 символа. Только буквы</p>
+            <div class="info__sub info" id="name_info">*Минимум 2 символа. Только буквы</div>
         </div>
         <button type="submit" name="submit">Зарегистрироваться</button>
         <div id="result-message" style="display: none;"></div>

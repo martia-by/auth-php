@@ -1,4 +1,5 @@
 <?php
+session_start();
 header('Content-Type: application/json');
 require __DIR__ . '/../../config/config.php';
 require __DIR__ . '/../../vendor/autoload.php';
@@ -74,8 +75,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($createSuccess) {
             $response = ['success' => true, 'message' => 'Регистрация прошла успешно!'];
-            setcookie("currentuser", $login, time() + 2592000,"/");
-            setcookie("currentusername", $name, time() + 2592000, "/");
+            $_SESSION['currentuser'] = $login;
+            $_SESSION['currentusername'] = $name;
+            $_SESSION['logged_in'] = true;
         } else {
             $response = ['success' => false, 'errors' => ['Не удалось зарегистрировать пользователя.']];
         }

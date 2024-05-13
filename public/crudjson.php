@@ -1,8 +1,5 @@
 <?php
 
-require __DIR__ . '/../config/config.php';
-require __DIR__ . '/../vendor/autoload.php';
-
 use AuthPhp\DatabaseCrudJson;
 
 $dbjson = new DatabaseCrudJson("users.json"); 
@@ -25,13 +22,6 @@ $data1array = [
 //setcookie("data1array", $data1array['login'], time()+5000);
 //unset($_COOKIE['data1array']);
 
-
-
-var_dump(time());
-
-echo "<br><br><br><br> <pre>";
-print_r($_COOKIE);
-echo "</pre>";
 
 
 //$dbjson->create($data1array); //create
